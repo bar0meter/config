@@ -1,0 +1,62 @@
+[user]
+    name = Ajinkya
+    email = ajinkya060@gmail.com
+    signingkey = ~/.ssh/git_signing.pub
+[core]
+    editor = nvim
+    whitespace = trailing-space,space-before-tab
+    autocrlf = input
+    excludesFile = ~/.config/git/exclude
+[branch]
+    autosetuprebase = always
+    sort = committerdate
+[push]
+    default = current
+    followTags = true
+    autoSetupRemote = true
+[remote]
+    pushDefault = origin
+[alias]
+    co = checkout
+    ci = commit -s
+    cim = commit --amend --no-edit --date=now
+    st = status
+    ts = status
+    sst = status
+    br = branch
+    df = diff
+    ap = add . -p
+    pl = pull
+    ps = push
+    fps = push --force-with-lease
+    bb = "!fish -c print_branches"
+[fetch]
+    prune = true
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[pager]
+    branch = false
+[diff]
+    colorMoved = default
+    colorMovedWS = allow-indentation-change
+[rerere]
+    enabled = true
+    autoupdate = true
+[checkout]
+    defaultRemote = origin
+[merge]
+    conflictStyle = diff3
+[rebase]
+    autosquash = true
+    autoStash = true
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+[advice]
+    detachedHead = false
+[bash]
+    showDirtyState = true
