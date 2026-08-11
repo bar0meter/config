@@ -28,3 +28,9 @@ zoxide init fish | source
 
 # atuin (ctrl-r only; up arrow stays fish history)
 atuin init fish --disable-up-arrow | source
+
+# Not --shims: a shim forks mise to re-resolve the version on every node/python
+# call. `activate` hooks PATH on directory change instead. Matches zsh/bash.
+if test -x $HOME/.local/bin/mise
+    $HOME/.local/bin/mise activate fish | source
+end
